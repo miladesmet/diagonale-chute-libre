@@ -3,22 +3,21 @@ import "../styles/style.css";
 import { useForm, SubmitHandler } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 
-type FormInputs={
+type FormInputs = {
     subject: string,
-    email: string, 
-    message : string
+    email: string,
+    message: string
 }
 
 export const ContactForm = () => {
 
-    // Etat pour suivre la soumission
-    const [isFormSubmitted, setIsFormSubmitted] = useState(false); 
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
-    const {register, handleSubmit, formState: {errors}} = useForm<FormInputs>()
+    const { register, handleSubmit, formState: { errors } } = useForm<FormInputs>()
 
-    const onSubmit: SubmitHandler<FormInputs>= async (data) =>{
+    const onSubmit: SubmitHandler<FormInputs> = async (data) => {
         await emailjs.send(
-            'service_nhvr251', 
+            'service_nhvr251',
             'template_kl2yqwd',
             {
                 subject: data.subject,
@@ -26,42 +25,42 @@ export const ContactForm = () => {
                 message: data.message
             },
             'YuF-ZyYUezqNLSYkz'
-            );
+        );
 
-            //Mise à jour de l'état du formulaire
-            setIsFormSubmitted(true); 
+        setIsFormSubmitted(true);
     }
 
-    return(
+    return (
         <div id="contactForm">
-             <h4>Nous contacter</h4>
+            <h4>Nous contacter</h4>
             {isFormSubmitted ? (
                 <p id="confirmation-message">Votre demande a été soumise avec succès ! Nous vous répondrons dans les plus brefs délais</p>
             ) : (
                 <>
-                    <form className="mt-5" onSubmit={handleSubmit(onSubmit)}>
-
+                    <div className="mt-4">
                         <div className="mb-3">
-                            <input {...register("email", {required:true})} className= "border" type="email" name= "email" id="email" placeholder="Votre adresse mail * " />
-                            {errors.email && <p id= "erreur-contact-form"> Email requis </p>}
+                            <label htmlFor="email">Votre email</label>
+                            <input {...register("email", { required: true })} className="border" type="email" name="email" id="email" placeholder="Votre adresse mail * " />
+                            {errors.email && <p className='text-red-500'> Email requis </p>}
                         </div>
 
                         <div className="mb-3">
-                            <input {...register("subject")} className="border" type="text" name= "subject" id="subject" placeholder="Sujet de votre demande" />
+                            <label htmlFor="subject">Sujet</label>
+                            <input {...register("subject")} className="border" type="text" name="subject" id="subject" placeholder="Sujet de votre demande" />
                         </div>
 
                         <div className="mb-3">
-                            <textarea {...register("message", {required:true})} rows={5} className="border resize-none" name= "message" id="message" placeholder="Contenu de votre demande *" />
-                            {errors.message && <p id= "erreur-contact-form"> Message requis </p>}
-
-
+                            <label htmlFor="message">Message</label>
+                            <textarea {...register("message", { required: true })} rows={5} className="border resize-none" name="message" id="message" placeholder="Contenu de votre demande *" />
+                            {errors.message && <p id="erreur-contact-form"> Message requis </p>}
                         </div>
 
-                        
-                        <input id="bouton" type='submit' className="block bg-[blue] text-[white] py-3 hover:bg-[gray]"/>
-                    </form>
+                        <div id="bouton" onClick={handleSubmit(onSubmit)} >
+                            Soumettre
+                        </div>
+                    </div>
                 </>
-        )}
-    </div>
+            )}
+        </div>
     )
 }

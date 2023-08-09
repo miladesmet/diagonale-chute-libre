@@ -1,0 +1,73 @@
+
+
+*{
+    margin: 0;
+  }
+
+/*----------------------------------
+    Style du formulaire  de contact
+  ------------------------------------*/ 
+/*
+#contactForm {
+    background-color: #C7D8F2;
+    padding: 2em;
+    min-height: 15vh;
+  }
+#contactForm h4 {
+    color: #496293;
+    font-size: 36px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 400;
+    line-height:  44.444%;
+}
+
+#contactForm form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#contactForm input, #contactForm textarea {
+    padding: 1em;
+    border: none;
+    margin-top: 1em;
+    border-bottom: 2px solid #5874AC;
+    background: #F2F4FF;
+
+    color: #c1c6d1;
+    font-family: Montserrat;
+    font-size: 1em;
+    font-style: normal;
+    font-weight: 400;
+
+}
+
+  #contactForm input:focus, #contactForm textarea:focus {
+    color: #5874AC;
+    outline: none; 
+  }
+
+  #contactForm #bouton{
+    background-color: #496293;
+    color : #FFFFFF;
+  }
+
+  #contactForm #bouton:hover {
+    background-color: #859ecc; 
+    color : #496293;
+  }
+
+  #erreur-contact-form{
+    color : red;
+  }
+
+ 
+ #confirmation-message{
+    margin-top: 1em;
+    color: #496293;
+    font-family: Roboto;
+    font-style: normal;
+ }
+*/
