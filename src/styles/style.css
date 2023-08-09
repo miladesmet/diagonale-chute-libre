@@ -5,14 +5,23 @@
   }
 
 /*----------------------------------
+    Style du footer
+  ------------------------------------*/ 
+  footer {
+    color: #496293;
+    font-family: Roboto;
+    background-color: #C7D8F2;
+  }
+/*----------------------------------
     Style du formulaire  de contact
   ------------------------------------*/ 
-/*
+
 #contactForm {
-    background-color: #C7D8F2;
     padding: 2em;
     min-height: 15vh;
   }
+
+/* Style du nous contacter */
 #contactForm h4 {
     color: #496293;
     font-size: 36px;
@@ -22,17 +31,18 @@
     line-height:  44.444%;
 }
 
-#contactForm form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+
+/* Style des labels */
+#contactForm label{
+  color: #496293;
+  font-family: Roboto;
+  font-style: normal;
 }
 
+/* style des input */
 #contactForm input, #contactForm textarea {
     padding: 1em;
     border: none;
-    margin-top: 1em;
     border-bottom: 2px solid #5874AC;
     background: #F2F4FF;
 
@@ -43,13 +53,15 @@
     font-weight: 400;
 
 }
-
+/* style des input en focus */
   #contactForm input:focus, #contactForm textarea:focus {
     color: #5874AC;
     outline: none; 
   }
 
+  /* style du bouton */
   #contactForm #bouton{
+    padding: 1em;
     background-color: #496293;
     color : #FFFFFF;
   }
@@ -59,10 +71,6 @@
     color : #496293;
   }
 
-  #erreur-contact-form{
-    color : red;
-  }
-
  
  #confirmation-message{
     margin-top: 1em;
@@ -70,4 +78,3 @@
     font-family: Roboto;
     font-style: normal;
  }
-*/

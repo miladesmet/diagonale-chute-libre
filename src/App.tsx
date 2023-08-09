@@ -1,12 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
 import { Accueil } from './screens/Accueil';
-
+import { Footer } from './components/Footer';
 
 const App = () => {
   return (
     <Router>
-      <div className='container'>
         <header>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet"/>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet" />
@@ -21,7 +20,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Accueil />} />
         </Routes>
-      </div>
+
+        <Footer/>
     </Router>
   );
 };
