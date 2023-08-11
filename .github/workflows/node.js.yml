@@ -10,10 +10,8 @@ permissions:
   contents: write
 
 jobs:
-  build-and-deploy:
-
+  build:
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [14.x, 16.x, 18.x]
@@ -30,12 +28,30 @@ jobs:
         
     - name: 🔧 Install and Build 
       run: |
-          npm ci
-          npm run build
+        npm ci
+        npm run build
 
-    - name: 🚀 Deploy 
-      uses: JamesIves/github-pages-deploy-action@3.7.1
+    
+    - name: Upload Artifacts 🔺
+      uses: actions/upload-artifact@v1
       with:
-        #GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-        BRANCH: gh-pages
-        FOLDER: .
+        name: site
+        path: dist
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v3
+
+      - name: Download Artifacts 🔻
+        uses: actions/download-artifact@v1
+        with:
+          name: site
+
+      - name: 🚀 Deploy 
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          BRANCH: gh-pages
+          FOLDER: site
