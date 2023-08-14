@@ -37,7 +37,7 @@ export const ContactForm = () => {
                 <p id="confirmation-message">Votre demande a été soumise avec succès ! Nous vous répondrons dans les plus brefs délais</p>
             ) : (
                 <>
-                    <div className="mt-4 flex flex-col justify-center items-center">
+                    <div className="mt-4 flex flex-col justify-center items-center ">
                         <div className="mb-6 flex flex-col justify-start">
                             <label htmlFor="email">Votre email</label>
                             <input {...register("email", { required: true })} className="border" type="email" name="email" id="email" placeholder="Votre adresse mail * " />

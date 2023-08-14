@@ -1,16 +1,23 @@
+:root {
+  --dark-blue: #496293;
+  --blue: #5874AC;
+  --middle-blue: #859ecc;
+  --light-blue: #C7D8F2;
 
+}
 
 *{
     margin: 0;
+    font-family: Roboto;
+    font-style: normal;
   }
 
 /*----------------------------------
     Style du footer
   ------------------------------------*/ 
   footer {
-    color: #496293;
-    font-family: Roboto;
-    background-color: #C7D8F2;
+    color: var(--dark-blue);
+    background-color: var(--light-blue);
   }
 /*----------------------------------
     Style du formulaire  de contact
@@ -23,10 +30,8 @@
 
 /* Style du nous contacter */
 #contactForm h4 {
-    color: #496293;
+    color: var(--dark-blue);
     font-size: 36px;
-    font-family: Roboto;
-    font-style: normal;
     font-weight: 400;
     line-height:  44.444%;
 }
@@ -34,47 +39,42 @@
 
 /* Style des labels */
 #contactForm label{
-  color: #496293;
-  font-family: Roboto;
-  font-style: normal;
+  color: var(--dark-blue);
 }
 
 /* style des input */
 #contactForm input, #contactForm textarea {
     padding: 1em;
     border: none;
-    border-bottom: 2px solid #5874AC;
+    border-bottom: 2px solid var(--blue);
     background: #F2F4FF;
 
     color: #c1c6d1;
     font-family: Montserrat;
     font-size: 1em;
-    font-style: normal;
     font-weight: 400;
 
 }
 /* style des input en focus */
   #contactForm input:focus, #contactForm textarea:focus {
-    color: #5874AC;
+    color: var(--blue);
     outline: none; 
   }
 
   /* style du bouton */
   #contactForm #bouton{
     padding: 1em;
-    background-color: #496293;
-    color : #FFFFFF;
+    background-color: var(--dark-blue);
+    color : white;
   }
 
   #contactForm #bouton:hover {
-    background-color: #859ecc; 
-    color : #496293;
+    background-color: var(--middle-blue); 
+    color : var(--dark-blue);
   }
 
  
  #confirmation-message{
     margin-top: 1em;
-    color: #496293;
-    font-family: Roboto;
-    font-style: normal;
+    color: var(--dark-blue);
  }

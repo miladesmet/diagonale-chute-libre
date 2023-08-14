@@ -1,6 +1,5 @@
 import React from 'react';
-import { Footer } from '../components/Footer';
-import { IconePaiement } from '../components/iconePaiement';
+
 export const Accueil = () => {
   return (
     <main>
