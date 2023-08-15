@@ -1,0 +1,80 @@
+:root {
+  --dark-blue: #496293;
+  --blue: #5874AC;
+  --middle-blue: #859ecc;
+  --light-blue: #C7D8F2;
+
+}
+
+*{
+    margin: 0;
+    font-family: Roboto;
+    font-style: normal;
+  }
+
+/*----------------------------------
+    Style du footer
+  ------------------------------------*/ 
+  footer {
+    color: var(--dark-blue);
+    background-color: var(--light-blue);
+  }
+/*----------------------------------
+    Style du formulaire  de contact
+  ------------------------------------*/ 
+
+#contactForm {
+    padding: 2em;
+    min-height: 15vh;
+  }
+
+/* Style du nous contacter */
+#contactForm h4 {
+    color: var(--dark-blue);
+    font-size: 36px;
+    font-weight: 400;
+    line-height:  44.444%;
+}
+
+
+/* Style des labels */
+#contactForm label{
+  color: var(--dark-blue);
+}
+
+/* style des input */
+#contactForm input, #contactForm textarea {
+    padding: 1em;
+    border: none;
+    border-bottom: 2px solid var(--blue);
+    background: #F2F4FF;
+
+    color: #c1c6d1;
+    font-family: Montserrat;
+    font-size: 1em;
+    font-weight: 400;
+
+}
+/* style des input en focus */
+  #contactForm input:focus, #contactForm textarea:focus {
+    color: var(--blue);
+    outline: none; 
+  }
+
+  /* style du bouton */
+  #contactForm #bouton{
+    padding: 1em;
+    background-color: var(--dark-blue);
+    color : white;
+  }
+
+  #contactForm #bouton:hover {
+    background-color: var(--middle-blue); 
+    color : var(--dark-blue);
+  }
+
+ 
+ #confirmation-message{
+    margin-top: 1em;
+    color: var(--dark-blue);
+ }
