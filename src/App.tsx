@@ -1,26 +1,21 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
-import Accueil from './screens/Accueil';
-import Footer from './components/Footer';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Footer from './components/Footer'
+import Header from './components/Header'
+import { routes } from './utils/routes'
 
-const App = () => {
-  return (
-    <Router>
-        <header>
-          <nav>
-            <NavLink to="/" style={({ isActive }) => ({ fontWeight: isActive ? 'bold' : 'normal' })}>
-              Accueil
-            </NavLink>
-          </nav>
-        </header>
+const App = () => (
+  <Router>
+    <Header routes={routes} />
 
-        <Routes>
-          <Route path="/" element={<Accueil />} />
-        </Routes>
+    <Routes>
+      {routes.map((route, i) => (
+        <Route key={i} path={route.path} element={route.element} />
+      ))}
+    </Routes>
 
-        <Footer/>
-    </Router>
-  );
-};
+    <Footer />
+  </Router>
+)
 
-export default App;
+export default App
