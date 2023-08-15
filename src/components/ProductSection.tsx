@@ -1,4 +1,5 @@
-import React from 'react'
+
+import React from 'react';
 
 interface ArticleProps {
     article: {
@@ -6,7 +7,8 @@ interface ArticleProps {
         id: number;
         price: number;
         description: string;
-    }
+        Options: Array<{ id: number; title: string, type: string }>;
+    };
 }
 
 export const Article: React.FC<ArticleProps> = ({ article }) => {
@@ -14,6 +16,8 @@ export const Article: React.FC<ArticleProps> = ({ article }) => {
         <a href={'/boutique/' + article.id}>
             <p className='text-2xl'>{article.title}</p>
             <p>{article.description}</p>
-            <p className=" bg-[#4C69A399] px-5 py-1 text-white"> {article.price} € </p>
+            <p className="bg-[#4C69A399] px-5 py-1 text-white">{article.price} €</p>
+            
         </a>
-    )};
+    );
+};
