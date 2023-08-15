@@ -1,8 +1,8 @@
 import React from 'react';
-import { ContactForm } from './ContactForm';
-import { ContactMentionsFooter } from './ContactMentionsFooter';
+import ContactForm from './ContactForm';
+import ContactMentionsFooter from './ContactMentionsFooter';
 
-export const Footer = () => {
+const Footer = () => {
     return (
       <footer>
         <ContactForm />
@@ -10,3 +10,5 @@ export const Footer = () => {
       </footer>
     );
   };
+
+export default Footer
