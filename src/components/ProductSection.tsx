@@ -1,9 +1,19 @@
-import React from 'react';
+import React from 'react'
 
-export const Shop = () => {
-  return (
-    <main>
-        <h1>Bienvenue dans la boutique</h1>
-    </main>
-  );
-};
+interface ArticleProps {
+    article: {
+        title: string;
+        id: number;
+        price: number;
+        description: string;
+    }
+}
+
+export const Article: React.FC<ArticleProps> = ({ article }) => {
+    return (
+        <a href={'/boutique/' + article.id}>
+            <p className='text-2xl'>{article.title}</p>
+            <p>{article.description}</p>
+            <p className=" bg-[#4C69A399] px-5 py-1 text-white"> {article.price} € </p>
+        </a>
+    )};
