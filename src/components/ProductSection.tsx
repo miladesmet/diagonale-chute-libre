@@ -7,7 +7,7 @@ interface ArticleProps {
         id: number;
         price: number;
         description: string;
-        Options: Array<{ id: number; title: string, type: string }>;
+        Options: Array<{ id: number; title: string, type: string, priceUpdate: number }>;
     };
 }
 

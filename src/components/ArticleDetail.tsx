@@ -7,10 +7,9 @@ interface Article {
     title: string;
     description: string;
     price: number;
-    Options: Array<{ id: number; title: string, type: string }>;
+    Options: Array<{ id: number; title: string, type: string, priceUpdate: number }>;
 }
 
-// ... (import statements and Article interface)
 
 export const ArticleDetail = () => {
     const { id } = useParams<{ id: string }>();
@@ -36,12 +35,12 @@ export const ArticleDetail = () => {
         );
     }
 
-    const optionsByType: { [type: string]: Array<{ id: number; title: string }> } = {};
+    const optionsByType: { [type: string]: Array<{ id: number; title: string; priceUpdate: number}> } = {};
     article.Options.forEach((option) => {
         if (!optionsByType[option.type]) {
             optionsByType[option.type] = [];
         }
-        optionsByType[option.type].push({ id: option.id, title: option.title });
+        optionsByType[option.type].push({ id: option.id, title: option.title, priceUpdate: option.priceUpdate});
     });
 
     return (
@@ -102,7 +101,7 @@ export const ArticleDetail = () => {
                                             htmlFor={`option-${option.id}`}
                                             className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                                         >
-                                            {option.title}
+                                            {option.title} ({option.priceUpdate}€)
                                         </label>
                                     </div>
                                 ))}
@@ -122,4 +121,3 @@ export const ArticleDetail = () => {
         </>
     );
 };
-
