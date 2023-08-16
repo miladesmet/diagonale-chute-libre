@@ -32,7 +32,7 @@ const Accueil = () => {
       </section>
 
       <section className="flex flex-col items-center gap-6 py-4">
-        <div className="flex items-start justify-around gap-6">
+        <div className="flex items-start justify-center gap-20 md:gap-40">
           <LogoWithText size={'2/5'} icon={mailLogo} text={'Achetez en ligne et recever directement votre bon par mail'} />
           <LogoWithText size={'2/5'} icon={creditCardLogo} text={'Paiement sécurisé CB, VISA'} />
         </div>
@@ -47,10 +47,12 @@ const Accueil = () => {
         </Link>
       </section>
 
-      <section className='flex items-start justify-center gap-20 md:gap-40 text-xl font-bold p-5'>
-        <LogoWithText size={'2/6'} icon={heightLogo} text={'4000 m'} />
-        <LogoWithText size={'2/6'} icon={timeLogo} text={'50 sec'} />
-        <LogoWithText size={'2/6'} icon={speedLogo} text={'200 km/h'} />
+      <section className='flex flex-col items-center gap-6 py-4'>
+        <div className="flex items-start justify-around gap-6 font-bold text-xl">
+          <LogoWithText size={'2/6'} icon={heightLogo} text={'4000 m'} />
+          <LogoWithText size={'2/6'} icon={timeLogo} text={'50 sec'} />
+          <LogoWithText size={'2/6'} icon={speedLogo} text={'200 km/h'} />
+        </div>
       </section>
     </main>
   )
