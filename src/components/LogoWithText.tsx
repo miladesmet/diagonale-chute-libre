@@ -1,7 +1,7 @@
 import React from 'react'
 
-const LogoWithText = ({ icon, text }) => (
-  <div className='flex flex-col items-center w-2/5 group'>
+const LogoWithText = ({ icon, text, size }) => (
+  <div className={`flex flex-col items-center w-${size} group`}>
     <img src={icon} alt={text} />
     <p className='text-center text-[#314A7D]'>{text}</p>
   </div>

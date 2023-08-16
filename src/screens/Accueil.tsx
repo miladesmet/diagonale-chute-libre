@@ -3,6 +3,9 @@ import LogoWithText from '../components/LogoWithText'
 import arrowLeft from '../assets/arrow-left-ios.svg'
 import creditCardLogo from '../assets/credit-card.svg'
 import mailLogo from '../assets/mail.svg'
+import speedLogo from '../assets/speed-logo.svg'
+import timeLogo from '../assets/time-logo.svg'
+import heightLogo from '../assets/height-logo.svg'
 import { Link } from 'react-router-dom'
 
 const Accueil = () => {
@@ -30,8 +33,8 @@ const Accueil = () => {
 
       <section className="flex flex-col items-center gap-6 py-4">
         <div className="flex items-start justify-around gap-6">
-          <LogoWithText icon={mailLogo} text={'Achetez en ligne et recever directement votre bon par mail'} />
-          <LogoWithText icon={creditCardLogo} text={'Paiement sécurisé CB, VISA'} />
+          <LogoWithText size={'2/5'} icon={mailLogo} text={'Achetez en ligne et recever directement votre bon par mail'} />
+          <LogoWithText size={'2/5'} icon={creditCardLogo} text={'Paiement sécurisé CB, VISA'} />
         </div>
         {/* ToDo : Update Link path to shop */}
         <Link
@@ -42,6 +45,12 @@ const Accueil = () => {
           Notre boutique
           <img src={arrowLeft} alt="Y aller" />
         </Link>
+      </section>
+
+      <section className='flex items-start justify-center gap-20 md:gap-40 text-xl font-bold p-5'>
+        <LogoWithText size={'2/6'} icon={heightLogo} text={'4000 m'} />
+        <LogoWithText size={'2/6'} icon={timeLogo} text={'50 sec'} />
+        <LogoWithText size={'2/6'} icon={speedLogo} text={'200 km/h'} />
       </section>
     </main>
   )
