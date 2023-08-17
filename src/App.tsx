@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { Shop } from './screens/Shop'
 import { ArticleDetail } from './components/ArticleDetail'
 import  AdminAuthentification from './screens/AdminAuthentification';
+import { FAQ } from './screens/FAQ';
 
 const App = () => {
   return (
@@ -22,6 +23,9 @@ const App = () => {
               <NavLink to="/AdminAuthentification" style={({ isActive }) => ({ fontWeight: isActive ? 'bold' : 'normal' })}>
                   Espace admin
               </NavLink>
+              <NavLink to="/FAQ" style={({ isActive }) => ({ fontWeight: isActive ? 'bold' : 'normal' })}>
+                  FAQ
+              </NavLink>
             <br />
           </nav>
         </header>
@@ -31,6 +35,8 @@ const App = () => {
           <Route path="/boutique" element={<Shop />} />
           <Route path="/boutique/:id" element={<ArticleDetail  />} />
           <Route path="/AdminAuthentification" element={<AdminAuthentification  />} />
+          <Route path="/FAQ" element={<FAQ  />} />
+
         </Routes>
 
         <Footer/>
