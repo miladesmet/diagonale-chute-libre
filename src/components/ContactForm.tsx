@@ -8,7 +8,7 @@ type FormInputs = {
   message: string
 }
 
-const ContactForm = () => {
+export const ContactForm = () => {
   const [isFormSubmitted, setIsFormSubmitted] = useState(false)
 
   const {

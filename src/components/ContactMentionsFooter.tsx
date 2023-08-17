@@ -3,7 +3,7 @@ import logo from '../assets/logo.png';
 import facebook from '../assets/facebook.png';
 import insta from '../assets/instagram.png';
 
-const ContactMentionsFooter = () => {
+export const ContactMentionsFooter = () => {
     return (
       <div className=" flex flex-col justify-center items-center">
             <img className="my-10" src={logo} alt="Diagonale Chute Libre" />

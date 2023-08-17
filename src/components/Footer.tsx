@@ -4,13 +4,13 @@ import { ContactMentionsFooter } from './ContactMentionsFooter';
 import { WeatherFooter } from './WeatherFooter'
 
 const Footer = () => {
-    return (
-      <footer>
-          <WeatherFooter/>
-        <ContactForm />
-        <ContactMentionsFooter />
-      </footer>
-    );
-  };
+  return (
+    <footer>
+      <WeatherFooter/>
+      <ContactForm />
+      <ContactMentionsFooter />
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
