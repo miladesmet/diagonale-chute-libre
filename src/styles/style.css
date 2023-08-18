@@ -1,4 +1,5 @@
 :root {
+  --very-dark-blue: #0E4595;
   --dark-blue: #496293;
   --blue: #5874AC;
   --middle-blue: #859ecc;
@@ -10,6 +11,7 @@
     margin: 0;
     font-family: Roboto;
     font-style: normal;
+    
   }
 
 body {
@@ -82,3 +84,15 @@ body {
     margin-top: 1em;
     color: var(--dark-blue);
  }
+
+/*----------------------------------
+    Style images
+  ------------------------------------*/ 
+ @media (max-width: 768px) {
+  .flex-column {
+    flex-direction: column !important;
+  }
+  .flex-column-reverse {
+    flex-direction: column-reverse !important;
+  }
+}
