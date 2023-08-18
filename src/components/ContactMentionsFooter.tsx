@@ -1,9 +1,12 @@
 import React from "react";
+import logo from '../assets/logo.png'
+import facebook from '../assets/facebook.png'
+import insta from '../assets/instagram.png'
 
 export const ContactMentionsFooter = () => {
     return (
       <div className=" flex flex-col justify-center items-center">
-            <img className="my-10" src="/src/assets/logo.png" alt="Diagonale Chute Libre" />
+            <img className="my-10" src={logo} alt="Diagonale Chute Libre" />
         
             <b>Diagonale Chute Libre </b>
             <p className="text-center">  11 chemin du bouès<br/>
@@ -16,8 +19,8 @@ export const ContactMentionsFooter = () => {
                     <a className="mb-10" href="mailto:diagonalechutelibre@gmail.com">diagonalechutelibre@gmail.com</a>
                  </div>
                 <div className="flex flex-row justify-center items-center">
-                    <a href="https://www.facebook.com/DiagonaleChuteLibre/"><img className="max-h-16" src="/src/assets/facebook.png" /></a>
-                    <a href="https://www.instagram.com/diagonalechutelibre/"><img className="max-h-16" src="/src/assets/instagram.png" /></a>
+                    <a href="https://www.facebook.com/DiagonaleChuteLibre/"><img className="max-h-16" src={facebook} /></a>
+                    <a href="https://www.instagram.com/diagonalechutelibre/"><img className="max-h-16" src={insta} /></a>
                 </div>
             </address>
             <b>Mentions Légales</b>
@@ -28,3 +31,5 @@ export const ContactMentionsFooter = () => {
       </div>
     );
   };
+
+export default ContactMentionsFooter

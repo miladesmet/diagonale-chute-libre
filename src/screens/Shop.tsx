@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from 'react'
 import { Article } from '../components/ProductSection'
 import { fetchArticles } from '../utils/getData'
@@ -29,3 +30,16 @@ export const Shop = () => {
 	);
 };
 
+=======
+import React from 'react'
+
+const Shop = () => {
+  return (
+    <main>
+      <h1>Bienvenue dans la boutique</h1>
+    </main>
+  )
+}
+
+export default Shop
+>>>>>>> develop

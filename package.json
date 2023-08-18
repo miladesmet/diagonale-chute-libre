@@ -30,7 +30,7 @@
     "tailwindcss": "^3.3.3",
     "vite": "^4.4.5"
   },
-  "description": "1 - cloner le dépôt :",
+  "description": "Inline shop for diagonale Chute Libre",
   "main": "tailwind.config.js",
   "keywords": [],
   "author": "",
