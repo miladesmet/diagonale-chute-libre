@@ -7,6 +7,7 @@ import timeLogo from '../assets/time-logo.svg'
 import heightLogo from '../assets/height-logo.svg'
 import skydivesImage from '../assets/images/vol.svg'
 import GoToButton from '../components/GoToButton'
+import ProductCarousel from '../components/ProductCarousel'
 
 const Accueil = () => {
   return (
@@ -41,7 +42,7 @@ const Accueil = () => {
       </section>
 
       <section className="flex flex-col items-center gap-6 py-4">
-        <div className='overflow-hidden w-full h-64'>
+        <div className="overflow-hidden w-full h-64">
           <img className="object-cover w-full md:h-80 duration-500 hover:scale-125" src={skydivesImage} alt="Parachutes sur ciel nuageux" />
         </div>
         <div className="flex items-start justify-around gap-20 font-bold text-xl">
@@ -50,6 +51,33 @@ const Accueil = () => {
           <LogoWithText icon={speedLogo} text={'200 km/h'} />
         </div>
       </section>
+
+      <ProductCarousel
+        itemList={[
+          {
+            image: skydivesImage,
+            title: 'Tandem en weekend1',
+            subtitle: '(Tarif normal)',
+            description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
+            price: 295,
+          },
+          {
+            image: skydivesImage,
+            title: 'Tandem en weekend2',
+            subtitle: '(Tarif normal)',
+            description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
+            price: 295,
+          },
+          {
+            image: skydivesImage,
+            title: 'Tandem en weekend3',
+            subtitle: '(Tarif normal)',
+            description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
+            price: 295,
+          },
+        ]}
+        inputsName={'name'}
+      />
     </main>
   )
 }
