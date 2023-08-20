@@ -6,8 +6,54 @@ import speedLogo from '../assets/speed-logo.svg'
 import timeLogo from '../assets/time-logo.svg'
 import heightLogo from '../assets/height-logo.svg'
 import skydivesImage from '../assets/images/vol.svg'
+import imageTandem from '../assets/images/saut-en-tandem1.svg'
+import imagePack from '../assets/images/stage-pack1.svg'
 import GoToButton from '../components/GoToButton'
-import ProductCarousel from '../components/ProductCarousel'
+import ProductPresentation from '../components/ProductPresentation'
+
+// ToDo : Liste temporaire pour affichage de la page d'accueil
+const productItemList = [
+  {
+    image: skydivesImage,
+    title: 'Tandem en weekend1',
+    subtitle: '(Tarif normal)',
+    description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
+    price: 295,
+    path: '',
+  },
+  {
+    image: skydivesImage,
+    title: 'Tandem en weekend2',
+    subtitle: '(Tarif normal)',
+    description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
+    price: 295,
+    path: '',
+  },
+  {
+    image: skydivesImage,
+    title: 'Tandem en weekend3',
+    subtitle: '(Tarif normal)',
+    description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
+    price: 295,
+    path: '',
+  },
+  {
+    image: skydivesImage,
+    title: 'Tandem en weekend2',
+    subtitle: '(Tarif normal)',
+    description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
+    price: 295,
+    path: '',
+  },
+  {
+    image: skydivesImage,
+    title: 'Tandem en weekend3',
+    subtitle: '(Tarif normal)',
+    description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
+    price: 295,
+    path: '',
+  },
+]
 
 const Accueil = () => {
   return (
@@ -41,42 +87,33 @@ const Accueil = () => {
         <GoToButton path={'pathToShop'} text={'Notre boutique'} />
       </section>
 
-      <section className="flex flex-col items-center gap-6 py-4">
+      <ProductPresentation
+        buttonPath="ToDo"
+        buttonText="Découvrir le tandem"
+        description="Le saut en parachute tandem est la façon la plus facile est sûre de découvrir la chute libre ; le rêve d'Icare ! C'est une expérience incomparable avec tout ce que vous auriez pu essayer avant ! Accroché(e) à un moniteur hyper expérimenté vous avez juste à profiter de cette sensation aussi intense qu'inoubliable !"
+        image={imageTandem}
+        title="Le Tandem"
+        itemList={productItemList}
+      />
+
+      <section className="flex flex-col items-center gap-6 pb-4">
         <div className="overflow-hidden w-full h-64">
           <img className="object-cover w-full md:h-80 duration-500 hover:scale-125" src={skydivesImage} alt="Parachutes sur ciel nuageux" />
         </div>
-        <div className="flex items-start justify-around gap-20 font-bold text-xl">
+        <div className="flex items-start justify-around gap-20 font-bold text-xl md:m-12">
           <LogoWithText icon={heightLogo} text={'4000 m'} />
           <LogoWithText icon={timeLogo} text={'50 sec'} />
           <LogoWithText icon={speedLogo} text={'200 km/h'} />
         </div>
       </section>
 
-      <ProductCarousel
-        itemList={[
-          {
-            image: skydivesImage,
-            title: 'Tandem en weekend1',
-            subtitle: '(Tarif normal)',
-            description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
-            price: 295,
-          },
-          {
-            image: skydivesImage,
-            title: 'Tandem en weekend2',
-            subtitle: '(Tarif normal)',
-            description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
-            price: 295,
-          },
-          {
-            image: skydivesImage,
-            title: 'Tandem en weekend3',
-            subtitle: '(Tarif normal)',
-            description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
-            price: 295,
-          },
-        ]}
-        inputsName={'name'}
+      <ProductPresentation
+        buttonPath="ToDo"
+        buttonText="Découvrir la PAC "
+        description="Le stage PAC, passage obligatoire pour devenir parachutiste a pour but de vous rendre autonome dans une séance de saut (en chute, sous voile et au pliage). Une fois terminée vous pouvez continuer votre progression en sautant seul.En 2023 la place avion est à 36€ et 11€ la location de parachute."
+        image={imagePack}
+        title="Le stage PAC"
+        itemList={productItemList}
       />
     </main>
   )
