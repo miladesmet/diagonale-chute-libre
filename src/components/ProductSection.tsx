@@ -1,6 +1,6 @@
 
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 interface ArticleProps {
     article: {
         title: string;
@@ -13,11 +13,10 @@ interface ArticleProps {
 
 export const Article: React.FC<ArticleProps> = ({ article }) => {
     return (
-        <a href={'/boutique/' + article.id}>
+      <Link to={'/boutique/' + article.id}>
             <p className='text-2xl'>{article.title}</p>
             <p>{article.description}</p>
             <p className="bg-[#4C69A399] px-5 py-1 text-white">{article.price} €</p>
-            
-        </a>
+       </Link>
     );
 };

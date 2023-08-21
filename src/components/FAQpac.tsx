@@ -2,7 +2,7 @@ import React from 'react';
 
 import FAQComponent from './FAQcomponent';
 
-import faq_pac from '../assets/faq_pac.json'
+import faq_pac from '../assets/data/faq_pac.json'
 
 export const FAQpac = () => {
   return (

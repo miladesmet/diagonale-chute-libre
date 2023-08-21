@@ -2,7 +2,7 @@ import React from 'react';
 
 import FAQComponent from './FAQcomponent';
 
-import faq_tandem from '../assets/faq_tandem.json'
+import faq_tandem from '../assets/data/faq_tandem.json'
 
 export const FAQtandem = () => {
   return (
