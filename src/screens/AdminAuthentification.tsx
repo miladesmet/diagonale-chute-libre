@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import bcrypt from 'bcryptjs';
+
 
 const AdminAuthentification: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -8,32 +10,47 @@ const AdminAuthentification: React.FC = () => {
 
   const handleLogin = async () => {
     try {
+      // Création de l'objet 'body' avec les informations d'identification de l'utilisateur.
+      const body_token = {
+        username: 'user',
+        password: 'user'
+      }
 
-      /*
-      console.log(username);
-      console.log(password);
-      */
+      // Déclaration de la variable 'accessToken'.
+      let accessToken;
 
+      // Effectue une requête POST pour se connecter et obtenir un jeton d'accès.
+      await axios.post('http://localhost:3000/api/login', body_token)
+        .then(res => accessToken = res.data.token);
+
+      // Création des en-têtes de la requête GET avec le jeton d'accès obtenu.
+      const headers = {
+        authorization: `${accessToken}`,
+      };
       
-      const body = {
-        username: username,
+      //console.log(headers);
+    
+
+      let crypted_password = await bcrypt.hash(password, 9);
+
+      //console.log(crypted_password); 
+
+      const body = {login: username,
         password: password
       }
 
-      console.log(body);
+      let idUser;
+ 
+      await axios.post('http://localhost:3000/api/admin/login', body, {headers})
+			.then(res => idUser = res.data.id);
+      
+      console.log(idUser);
 
-      //const response = await axios.post('http://localhost:3000/api/login',body);
-      let accessToken;
-
-      /* Ce nest pas la bonne fonction 
-      await axios.post('http://localhost:3000/api/login', body)
-			.then(res => accessToken = res.data.token);
-      */
-      console.log(accessToken);
+     
 
       //const { token } = response.data.token;
 
-      console.log('Token:', accessToken); // Attention le stocker pour les prochaines requetes 
+      console.log('Id user:', idUser); // Attention le stocker pour les prochaines requetes 
 
       // Redirection à mettre en place 
       
