@@ -1,0 +1,58 @@
+[
+  {
+    "question": "Quand est-ce que je peux faire un saut ?",
+    "answer": "Entre avril et fin octobre, en fonction des conditions météorologiques, à l'aérodrome de Gap-Tallard."
+  },
+  {
+    "question": "Quel est l'âge requis pour un saut en parachute ?",
+    "answer": "Pour un saut en tandem en parachute, l'âge minimum est de 15 ans avec une autorisation parentale, ou 18 ans sans autorisation parentale."
+  },
+  {
+    "question": "Existe-t-il une limite de poids pour sauter en parachute ?",
+    "answer": "Vous pouvez pratiquer cette activité jusqu'à un poids de 90 kg sans problème. Au-delà de ce poids, veuillez nous contacter via notre formulaire en ligne ou par téléphone au 06 60 83 12 84."
+  },
+  {
+    "question": "Est-ce qu'un certificat médical est nécessaire ?",
+    "answer": "Un certificat médical de non-contre-indication pour un saut en parachute en tandem est obligatoire. Vous pouvez l'obtenir auprès de votre médecin généraliste."
+  },
+  {
+    "question": "Quelle est la tenue recommandée ?",
+    "answer": "Il est suggéré de porter des vêtements décontractés et sportifs qui ne sont pas trop amples, comme des jeans, des shorts, des baskets et un sweat-shirt ou une polaire. Évitez les chaussures de ville et les talons. Si nécessaire, une combinaison de saut pourra vous être fournie."
+  },
+  {
+    "question": "Que se passe-t-il en cas de conditions météorologiques défavorables ?",
+    "answer": "Si les prévisions météo ne sont pas bonnes, la réservation sera reportée. Si le jour du saut présente une météo peu favorable, nous reprogrammerons le rendez-vous à une date ultérieure selon votre choix."
+  },
+  {
+    "question": "Combien de temps devrais-je prévoir sur place ?",
+    "answer": "En raison de divers facteurs tels que la météo et le nombre de parachutistes, il est recommandé de prévoir une demi-journée pour la séance de saut."
+  },
+  {
+    "question": "J'éprouve de la peur, est-ce normal ?",
+    "answer": "Il est tout à fait normal de ressentir de l'appréhension. Monter à bord d'un petit avion pour ensuite sauter en parfait état de fonctionnement n'est pas une expérience commune. Cependant, le briefing rassurant de votre moniteur, son professionnalisme et son expérience vous aideront à vous sentir en confiance et à vivre cette expérience exceptionnelle."
+  },
+  {
+    "question": "J'ai le vertige, est-ce un obstacle ?",
+    "answer": "Le vertige est généralement ressenti en hauteur mais en contact avec le sol, comme au sommet d'une échelle, d'un immeuble, d'un pont ou d'une falaise. Cette sensation n'est généralement pas ressentie en avion."
+  },
+  {
+    "question": "Est-ce que l'atterrissage est violent ?",
+    "answer": "En tandem, c'est le moniteur qui assure un atterrissage en douceur. Il suffit de soulever correctement vos jambes pour que ce soient les jambes du moniteur qui touchent le sol en premier."
+  },
+  {
+    "question": "Suis-je assuré pour le saut en parachute ?",
+    "answer": "Oui, toute personne effectuant un saut en parachute doit être assurée. Vous serez couvert par l'assurance de la Fédération Française de Parachutisme."
+  },
+  {
+    "question": "Mon moniteur possède-t-il les qualifications requises ?",
+    "answer": "Absolument, il est obligatoire pour les moniteurs d'avoir des qualifications professionnelles pour sauter avec des passagers. Tous nos moniteurs détiennent un Brevet d'État de parachutisme délivré par la Fédération française de Parachutisme, ainsi qu'une qualification tandem renouvelée chaque année."
+  },
+  {
+    "question": "J'utilise des lentilles ou des lunettes, est-ce un problème ?",
+    "answer": "Pas du tout ! Si vous avez le choix, privilégiez les lentilles, car elles sont plus confortables avec les lunettes de chute libre que nous vous fournirons. Pour les personnes portant uniquement des lunettes correctrices, des sur-lunettes spécialement conçues pour le saut en parachute seront mises à votre disposition."
+  },
+  {
+    "question": "Que se passe-t-il si le parachute ne s'ouvre pas ?",
+    "answer": "Les parachutes sont conçus pour s'ouvrir et comportent une voilure de secours qui est inspectée chaque année par un professionnel qualifié. Utiliser le parachute de secours ne présente aucun risque. De plus, un déclencheur de sécurité s'activera automatiquement pour ouvrir le parachute de secours si nécessaire."
+  }
+]
