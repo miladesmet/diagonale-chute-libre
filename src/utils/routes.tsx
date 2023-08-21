@@ -9,7 +9,7 @@ const routes = [
   { path: '/boutique', title: 'Boutique', element: <Shop /> },
   { path: '/galerie', title: 'Galerie photo', element: <>ToDo</> },
   { path: '/panier', title: 'Panier d’achat', element: <>ToDo</> },
-  { path: '/FAQ', title: 'FAQ', element: <FAQ/> },
+  { path: '/faq', title: 'FAQ', element: <FAQ/> },
   { path: '/boutique/:id', element: <ArticleDetail/> },
 ]
 

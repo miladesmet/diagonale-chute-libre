@@ -1,14 +1,12 @@
-import React from 'react';
+import React from 'react'
+import FAQSection from '../components/FAQSection'
 
-import { FAQtandem } from '../components/FAQtandem';
-import { FAQpac } from '../components/FAQpac';
+import tandemData from '../data/faq_tandem.json'
+import pacData from '../data/faq_pac.json'
 
-export const FAQ = () => {
-  return (
-    <main>
-        <FAQtandem />
-        <FAQpac/>
-
-    </main>
-  );
-};
+export const FAQ = () => (
+  <main>
+    <FAQSection sectionTitle={'FAQ Tandem'} faqData={tandemData} />
+    <FAQSection sectionTitle={'FAQ PAC'} faqData={pacData} />
+  </main>
+)
