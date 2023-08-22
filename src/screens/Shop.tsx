@@ -4,7 +4,15 @@ import { fetchArticles } from '../utils/getData'
 
 export const Shop = () => {
 
-	const [posts, setData] = useState([]);
+	interface Article {
+		id: number;
+		title: string;
+		description: string;
+		price: number;
+		Options: Array<{ id: number; title: string, type: string, priceUpdate: number }>;
+	}
+
+	const [posts, setData] = useState<Article[]>([]);
 
 	useEffect(() => {
 		fetchArticles()
