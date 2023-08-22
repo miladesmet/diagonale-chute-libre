@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { fetchArticles } from '../utils/getData';
+import { fetchData } from '../utils/getData';
 
 interface Article {
     id: number;
@@ -19,7 +19,7 @@ export const ArticleDetail = () => {
     const [article, setArticle] = useState<Article | null>(null);
 
     useEffect(() => {
-        fetchArticles()
+        fetchData("article", "GET", {})
             .then((data) => {
                 const foundArticle = data.find((article: Article) => article.id === articleId);
                 setArticle(foundArticle || null);

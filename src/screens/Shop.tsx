@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Article } from '../components/ProductSection'
-import { fetchArticles } from '../utils/getData'
+import { fetchData } from '../utils/getData'
 
 export const Shop = () => {
 
@@ -15,7 +15,7 @@ export const Shop = () => {
 	const [posts, setData] = useState<Article[]>([]);
 
 	useEffect(() => {
-		fetchArticles()
+		fetchData("article", "GET", {})
 			.then((data) => setData(data))
 			.catch((error) => console.error(error));
 	}, []);
