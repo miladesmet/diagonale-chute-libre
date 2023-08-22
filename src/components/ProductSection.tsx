@@ -11,12 +11,10 @@ interface ArticleProps {
     };
 }
 
-export const Article: React.FC<ArticleProps> = ({ article }) => {
-    return (
+export const Article: React.FC<ArticleProps> = ({ article }) => (
       <Link to={'/boutique/' + article.id}>
             <p className='text-2xl'>{article.title}</p>
             <p>{article.description}</p>
             <p className="bg-[#4C69A399] px-5 py-1 text-white">{article.price} €</p>
        </Link>
     );
-};
