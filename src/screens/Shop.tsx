@@ -11,6 +11,17 @@ export const Shop = () => {
 			.then((data) => setData(data))
 			.catch((error) => console.error(error));
 	}, []);
+	
+	if (posts.length == 0){
+		return (
+			<main className="bg-[#F2F6FF]">
+				<h1 className=" pt-5 text-[#496293] text-4xl font-bold text-center ">Bienvenue dans la boutique</h1>
+				<div className='bg-white'>
+					<h3 className=" w-1/2 m-auto my-5 p-5 text-center">Il n'y a actuellement aucun article dans la boutique.</h3>
+				</div>
+			</main>
+		);
+	} else{
 
 	return (
 		<main className="bg-[#F2F6FF]">
@@ -27,5 +38,5 @@ export const Shop = () => {
 			</div>
 		</main>
 	);
-};
+}};
 
