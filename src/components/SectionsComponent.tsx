@@ -27,7 +27,7 @@ const SectionComponent: React.FC<Props> = ({ sections }) => {
 
   return (
     <div className='bg-[#F2F6FF] text-[#0E4595]  py-5'>
-      {sections.sections.map((section, index) => (
+      {sections.map((section, index) => (
         <div
           className={`flex items-center py-3 ${
             index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'

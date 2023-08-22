@@ -1,6 +1,6 @@
 import React from 'react';
 import SectionComponent from './SectionsComponent';
-import ProcessusTandemJson from '../assets/presentation_tandem.json';
+import ProcessusTandemJson from '../data/presentation_tandem.js';
 
 
 const ProcessusTandem = () => {
