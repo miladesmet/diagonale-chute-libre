@@ -1,14 +1,16 @@
 import React from 'react';
-import ContactForm from './ContactForm';
-import ContactMentionsFooter from './ContactMentionsFooter';
+import { ContactForm } from './ContactForm';
+import { ContactMentionsFooter } from './ContactMentionsFooter';
+import { WeatherFooter } from './WeatherFooter'
 
 const Footer = () => {
-    return (
-      <footer>
-        <ContactForm />
-        <ContactMentionsFooter />
-      </footer>
-    );
-  };
+  return (
+    <footer>
+      <WeatherFooter/>
+      <ContactForm />
+      <ContactMentionsFooter />
+    </footer>
+  );
+};
 
-export default Footer
+export default Footer;
