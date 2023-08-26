@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import LogoWithText from '../components/LogoWithText'
 import creditCardLogo from '../assets/credit-card.svg'
 import mailLogo from '../assets/mail.svg'
@@ -10,52 +10,51 @@ import imageTandem from '../assets/images/saut-en-tandem1.svg'
 import imagePack from '../assets/images/stage-pack1.svg'
 import GoToButton from '../components/GoToButton'
 import ProductPresentation from '../components/ProductPresentation'
+import { fetchData, getPictureUrl } from '../utils/getData'
 
-// ToDo : Liste temporaire pour affichage de la page d'accueil
-const productItemList = [
-  {
-    image: skydivesImage,
-    title: 'Tandem en weekend1',
-    subtitle: '(Tarif normal)',
-    description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
-    price: 295,
-    path: '',
-  },
-  {
-    image: skydivesImage,
-    title: 'Tandem en weekend2',
-    subtitle: '(Tarif normal)',
-    description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
-    price: 295,
-    path: '',
-  },
-  {
-    image: skydivesImage,
-    title: 'Tandem en weekend3',
-    subtitle: '(Tarif normal)',
-    description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
-    price: 295,
-    path: '',
-  },
-  {
-    image: skydivesImage,
-    title: 'Tandem en weekend2',
-    subtitle: '(Tarif normal)',
-    description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
-    price: 295,
-    path: '',
-  },
-  {
-    image: skydivesImage,
-    title: 'Tandem en weekend3',
-    subtitle: '(Tarif normal)',
-    description: 'Valable en weekend, semaine et jours fériés. Sur le site de Tallard',
-    price: 295,
-    path: '',
-  },
-]
+type productItem = {
+  image: string
+  title: string
+  description: string
+  price: Number
+  path: string
+}
 
 const Accueil = () => {
+  const [tandemArticles, setTandemArticles] = useState<productItem[]>([])
+  const [pacArticles, setPacArticles] = useState<productItem[]>([])
+
+  useEffect(() => {
+    // Récupère les données a afficher dans le carrousel et met à jout le state
+    const fetchCarrouselData = async (carrouselName, setter) => {
+      // Récupération des données du carrousel
+      const apiData = await fetchData('carrousel/' + carrouselName, 'GET', false)
+
+      const newArray: productItem[] = []
+
+      for (const article of apiData.Articles) {
+        const { title, price, id, description } = article
+        const path = `/boutique/${id}`
+
+        // récupération des données de l'article
+        const articleData = await fetchData('article/' + id, 'GET', false)
+
+        // Puis on récupère l'url de sa première image
+        const image = getPictureUrl(await articleData.Pictures[0].originalName)
+
+        // création du nouvel article
+        const newArticle = { image, title, description, price, path }
+        newArray.push(newArticle)
+      }
+
+      // Mise à jour du state avec le nouvel array
+      await setter(newArray)
+    }
+
+    fetchCarrouselData('pac', setPacArticles)
+    fetchCarrouselData('tandem', setTandemArticles)
+  }, [])
+
   return (
     <main className="bg-[#F2F4FF]">
       <section className="flex flex-col gap-8 items-center bg-[#E0ECFF] text-[#5874AC] text-center text-lg py-8 px-[10%]">
@@ -83,8 +82,7 @@ const Accueil = () => {
           <LogoWithText icon={mailLogo} text={'Achetez en ligne et recever directement votre bon par mail'} />
           <LogoWithText icon={creditCardLogo} text={'Paiement sécurisé CB, VISA'} />
         </div>
-        {/* ToDo : Update Link path to shop */}
-        <GoToButton path={'pathToShop'} text={'Notre boutique'} />
+        <GoToButton path={'/boutique'} text={'Notre boutique'} />
       </section>
 
       <ProductPresentation
@@ -93,7 +91,7 @@ const Accueil = () => {
         description="Le saut en parachute tandem est la façon la plus facile est sûre de découvrir la chute libre ; le rêve d'Icare ! C'est une expérience incomparable avec tout ce que vous auriez pu essayer avant ! Accroché(e) à un moniteur hyper expérimenté vous avez juste à profiter de cette sensation aussi intense qu'inoubliable !"
         image={imageTandem}
         title="Le Tandem"
-        itemList={productItemList}
+        itemList={tandemArticles}
       />
 
       <section className="flex flex-col items-center gap-6 pb-4">
@@ -113,7 +111,7 @@ const Accueil = () => {
         description="Le stage PAC, passage obligatoire pour devenir parachutiste a pour but de vous rendre autonome dans une séance de saut (en chute, sous voile et au pliage). Une fois terminée vous pouvez continuer votre progression en sautant seul.En 2023 la place avion est à 36€ et 11€ la location de parachute."
         image={imagePack}
         title="Le stage PAC"
-        itemList={productItemList}
+        itemList={pacArticles}
       />
     </main>
   )

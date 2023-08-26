@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom'
 interface ProductCarouselItemProps {
   image: string
   title: string
-  subtitle: string
   description: string
   price: Number
   className: string
@@ -12,7 +11,7 @@ interface ProductCarouselItemProps {
   path: string
 }
 
-const ProductCarouselItem: React.FC<ProductCarouselItemProps> = ({ image, title, subtitle, description, price, className, htmlFor, path }) => (
+const ProductCarouselItem: React.FC<ProductCarouselItemProps> = ({ image, title, description, price, className, htmlFor, path }) => (
   <label
     htmlFor={htmlFor}
     className={`${className} min-w-[310px] max-w-[310px] h-[390px] bg-white duration-[.6s] ease-in-out motion-reduce:transition-none`}
@@ -20,7 +19,6 @@ const ProductCarouselItem: React.FC<ProductCarouselItemProps> = ({ image, title,
     <img src={image} alt={title} className="h-[50%] w-full object-cover" />
     <div className="h-[50%] flex flex-col justify-around items-center py-4">
       <h3 className="font-bold text-2xl">{title}</h3>
-      <h4 className="font-bold">{subtitle}</h4>
       <p>{description}</p>
       <Link to={path} className="font-bold text-white text-2xl bg-[#4C69A399] min-w-[150px] p-1 duration-300 hover:bg-[#4C69A3]">
         {price?.toString()} €
@@ -32,7 +30,6 @@ const ProductCarouselItem: React.FC<ProductCarouselItemProps> = ({ image, title,
 type productItem = {
   image: string
   title: string
-  subtitle: string
   description: string
   price: Number
   path: string

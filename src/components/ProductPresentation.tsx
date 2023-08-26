@@ -5,7 +5,6 @@ import GoToButton from './GoToButton'
 type productItem = {
   image: string
   title: string
-  subtitle: string
   description: string
   price: Number
   path: string
@@ -29,7 +28,7 @@ const ProductPresentation: React.FC<Props> = ({ title, image, description, itemL
       <div className="flex flex-col items-center gap-5 p-10 text-center">
         <h2 className='text-white text-4xl font-bold'>{title}</h2>
         <p className='text-[#0E4595] text-lg'>{description}</p>
-        <ProductCarousel itemList={itemList} inputsName={title} />
+        {itemList.length !== 0 && <ProductCarousel itemList={itemList} inputsName={title} />}
         <GoToButton text={buttonText} path={buttonPath} />
       </div>
     </section>

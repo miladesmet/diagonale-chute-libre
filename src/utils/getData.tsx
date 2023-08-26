@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const baseURL: string = "http://localhost:3000/api/"
+const apiURL: string = "http://localhost:3000/"
+const baseURL: string = apiURL + "api/"
 
 // Cette fonction asynchrone est exportée pour pouvoir être utilisée ailleurs dans le code.
 export async function fetchData(url: string, typeRequest: "GET"|"POST"|"PUT", body:{} ) {
@@ -62,3 +63,9 @@ export async function fetchWeather() {
 		throw error;
 	}
 }
+
+
+// Renvoie l'url de l'image récupérée depuis l'api
+const getPictureUrl = (imageName: string) => apiURL + "uploads/" + imageName
+
+export { getPictureUrl }
