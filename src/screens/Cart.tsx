@@ -33,13 +33,16 @@ const Cart = () => {
       <h1 className="text-5xl font-bold text-center">Panier d'achat</h1>
       {loading || bookings.map((booking, i) => <CartArticle key={i} booking={booking} />)}
       {loading || <CartTotal bookings={bookings} />}
-      <p className=''>Entrez votre adresse mail. Celle ci sera utilisée pour vous envoyer votre confirmation de commande.</p>
-      <label htmlFor="email">Adresse email *</label>
-      <input type="email" id="email" required />
-      <div>
-        <input type="radio" id="conditions" required />
+      <p className="w-full md:w-[60%]">Entrez votre adresse mail. Celle ci sera utilisée pour vous envoyer votre confirmation de commande.</p>
+      <div className='flex flex-col gap-2 items-start w-full md:w-[60%] text-xl'>
+        <label htmlFor="email">Adresse email *</label>
+        <input type="email" id="email" className='p-2 border-2 border-solid border-[#314A7D] w-4/5' required />
+      </div>
+      <div className='flex items-center gap-3 w-full md:w-[60%]'>
+        <input type="checkbox" id="conditions" className='w-4 h-4' required />
         <label htmlFor="conditions">J’accepte Termes et conditions.</label>
       </div>
+      <p className="w-full md:w-[60%]">* Ces champs sont requis pour poursuivre votre commande.</p>
       <GoToButton path={'ToDo'} text={'Commander'} />
     </main>
   )
