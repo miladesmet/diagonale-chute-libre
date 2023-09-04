@@ -3,7 +3,7 @@ import axios from 'axios'
 const baseURL: string = "http://localhost:3000/api/"
 
 // Cette fonction asynchrone est exportée pour pouvoir être utilisée ailleurs dans le code.
-export async function fetchData(url: string, typeRequest: "GET"|"POST"|"PUT", body:{} ) {
+export async function fetchData(url: string, typeRequest: "GET"|"POST"|"PUT"|"DELETE", requestBody:{}={} ) {
 	try {
 		// Création de l'objet 'body' avec les informations d'identification de l'utilisateur.
 		const body = {
@@ -34,13 +34,16 @@ export async function fetchData(url: string, typeRequest: "GET"|"POST"|"PUT", bo
 			return responseGet.data.data;
 
 			case "POST": 
-			const responsePost = await axios.post(baseURL+url, body, {headers})
+			const responsePost = await axios.post(baseURL+url, requestBody, {headers})
 			return responsePost.data;
 
 			case "PUT": 
-			const responsePut = await axios.put(baseURL+url, body, {headers})
+			const responsePut = await axios.put(baseURL+url, requestBody, {headers})
 			return responsePut.data;
 			
+			case "DELETE": 
+			const responseDelete = await axios.delete(baseURL+url, {headers})
+			return responseDelete.data;
 		}
 		
 

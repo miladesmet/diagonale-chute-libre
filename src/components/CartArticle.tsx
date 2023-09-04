@@ -5,16 +5,18 @@ import { Booking } from '../types'
 
 interface Props {
   booking: Booking
+  deleteArticleAndReload: (id: number) => Promise<void>
+  bookingId: string
 }
 
-const CartArticle: FC<Props> = ({ booking }) => {
+const CartArticle: FC<Props> = ({ booking, deleteArticleAndReload, bookingId }) => {
   const { article, jumperAge, jumperFirstame, jumperName, jumperWeight } = booking
 
   const calcPrice = () => article?.price.toFixed(2)
 
   return (
     <div className="flex items-start md:w-[60%] gap-5">
-      {/* ToDo : Renplacer image ci dessous par article?.Pictures[0].originalName */}
+      {/* ToDo : Remplacer image ci dessous par article?.Pictures[0].originalName */}
       <img className="max-w-sm w-2/6" src={picture} alt={`Image correspondant à l'article ${article?.title}`} />
       <div className="grow">
         <h2 className="text-xl font-bold">{article?.title}</h2>
@@ -27,7 +29,7 @@ const CartArticle: FC<Props> = ({ booking }) => {
         <p className="font-bold text-right">{calcPrice()}</p>
       </div>
       {/* ToDo : Modifier button */}
-      <button className="text-3xl" title="Supprimer l'article du panier" onClick={_ => console.log('Supprimer article ' + article.id)}>
+      <button className="text-3xl" title="Supprimer l'article du panier" onClick={_ => deleteArticleAndReload(bookingId)}>
         <HiX />
       </button>
     </div>
