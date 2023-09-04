@@ -1,12 +1,28 @@
 import React, { useEffect, useState } from 'react'
 import CartArticle from '../components/CartArticle'
 import CartTotal from '../components/CartTotal'
-import GoToButton from '../components/GoToButton'
 import { fetchData } from '../utils/getData'
 import { Booking } from '../types'
+import { useForm, SubmitHandler } from 'react-hook-form'
+import arrowRight from '../assets/arrow-right-ios.svg'
+import CartFormInput from '../components/CartFormInput'
+
+type FormInput = {
+  name: string
+  firstname: string
+  email: string
+  phone: string
+  conditions: boolean
+}
 
 const Cart = () => {
   const idCart = 1
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormInput>()
 
   // Liste des réservations de la commande
   const [bookings, setBookings] = useState<Booking[]>([])
@@ -43,6 +59,11 @@ const Cart = () => {
     fetchCartData(idCart)
   }, [])
 
+  const handleClick: SubmitHandler<FormInput> = data => {
+    // ToDo : Create Order with this data
+    console.log(data)
+  }
+
   return (
     <main className="bg-[#F2F4FF] flex flex-col items-center gap-10 p-7 text-[#314A7D]">
       <h1 className="text-5xl font-bold text-center">Panier d'achat</h1>
@@ -56,16 +77,53 @@ const Cart = () => {
         ))}
       {loading || <CartTotal bookings={bookings} />}
       <p className="w-full md:w-[60%]">Entrez votre adresse mail. Celle ci sera utilisée pour vous envoyer votre confirmation de commande.</p>
-      <div className="flex flex-col gap-2 items-start w-full md:w-[60%] text-xl">
-        <label htmlFor="email">Adresse email *</label>
-        <input type="email" id="email" className="p-2 border-2 border-solid border-[#314A7D] w-4/5" required />
-      </div>
-      <div className="flex items-center gap-3 w-full md:w-[60%]">
-        <input type="checkbox" id="conditions" className="w-4 h-4" required />
-        <label htmlFor="conditions">J’accepte Termes et conditions.</label>
+
+      <CartFormInput
+        error={errors.firstname}
+        errorMessgae={'Votre prénom est requis pour continuer.'}
+        labelFor={'firstname'}
+        labelText={'Prénom'}
+        registerData={register('firstname', { required: true })}
+      />
+      <CartFormInput
+        error={errors.name}
+        errorMessgae={'Votre nom est requis pour continuer.'}
+        labelFor={'name'}
+        labelText={'Nom'}
+        registerData={register('name', { required: true })}
+      />
+      <CartFormInput
+        error={errors.email}
+        errorMessgae={'Votre email est requis pour continuer.'}
+        labelFor={'email'}
+        labelText={'Adresse email'}
+        registerData={register('email', { required: true })}
+        inputType="email"
+      />
+      <CartFormInput
+        error={errors.phone}
+        errorMessgae={'Votre numéro de téléphone est requis pour continuer.'}
+        labelFor={'phone'}
+        labelText={'Numéro de téléphone'}
+        registerData={register('phone', { required: true })}
+      />
+
+      <div className="w-full md:w-[60%]">
+        <div className="flex items-center gap-3 w-full md:w-[60%]">
+          <input {...register('conditions', { required: true })} type="checkbox" id="conditions" className="w-4 h-4" />
+          <label htmlFor="conditions">J'accepte Termes et conditions.</label>
+        </div>
+        {errors.conditions && <p className="text-red-500">Vous devez accepter les conditions ci-dessus pour continuer.</p>}
       </div>
       <p className="w-full md:w-[60%]">* Ces champs sont requis pour poursuivre votre commande.</p>
-      <GoToButton path={'ToDo'} text={'Commander'} />
+      <button
+        className="flex items-center justify-end text-white text-lg font-bold tracking-wider bg-[#0E4595] py-2 pl-4"
+        title={'Commander'}
+        onClick={handleSubmit(handleClick)}
+      >
+        Commander
+        <img className="duration-300" src={arrowRight} alt="Flèche vers la droite" />
+      </button>
     </main>
   )
 }
